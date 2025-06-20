@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PDF Merger Tool</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>📎 PDF Merger Tool</h1>
+        <p>Upload your PDF files and merge them into one.</p>
+
+        <div id="drop-area">
+            <p>📂 Drag & Drop files here or <label for="pdfs" class="browse">Browse</label></p>
+        </div>
+
+        <ul id="fileList"></ul>
+
+        <!-- ✅ Input inside form -->
+        <form id="mergeForm">
+            <input type="file" id="pdfs" name="pdfs" accept="application/pdf" multiple hidden>
+            <button type="submit">🔗 Merge PDFs</button>
+        </form>
+
+        <div id="toast">✅ Merged PDF is downloading...</div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

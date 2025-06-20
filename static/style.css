@@ -1,0 +1,111 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: url("/static/backgrounds/background.png") no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.95);
+    margin: 100px auto;
+    padding: 30px 40px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    color: #007BFF;
+}
+
+#drop-area {
+    border: 2px dashed #007BFF;
+    border-radius: 8px;
+    padding: 30px;
+    margin: 20px 0;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+#drop-area:hover {
+    background-color: #e9f5ff;
+}
+
+.browse {
+    color: #007BFF;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#fileList {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 20px 0;
+    text-align: left;
+}
+
+#fileList li {
+    padding: 5px 10px;
+    background: #f0f0f0;
+    margin: 5px 0;
+    border-radius: 6px;
+    position: relative;
+}
+
+#fileList li::after {
+    content: "❌";
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    color: red;
+}
+
+button {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Toast notification */
+#toast {
+    visibility: hidden;
+    min-width: 200px;
+    background-color: #28a745;
+    color: white;
+    text-align: center;
+    border-radius: 8px;
+    padding: 15px;
+    position: fixed;
+    z-index: 1;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 16px;
+}
+
+#toast.show {
+    visibility: visible;
+    animation: fadein 0.5s, fadeout 2.5s 2s;
+}
+
+@keyframes fadein {
+    from {bottom: 10px; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 10px; opacity: 0;}
+}
